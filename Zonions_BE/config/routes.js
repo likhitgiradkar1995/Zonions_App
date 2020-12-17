@@ -35,7 +35,7 @@ module.exports.routes = {
  'POST /AddRestaurant':'RestaurantController.create',
  'GET /GetRestaurants':'RestaurantController.find',
  'GET /GetRestaurants/:id':'RestaurantController.findOne',
- 'PATCH /UpdateRestaurant/:id':'RestaurantController.update',
+ 'PUT /UpdateRestaurant/:id':'RestaurantController.update',
  'DELETE /DeleteRestaurant/:id':'RestaurantController.delete',
 
  

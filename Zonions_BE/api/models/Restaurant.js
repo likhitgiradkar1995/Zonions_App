@@ -17,11 +17,17 @@ module.exports = {
 
     address: { type: 'string' },
 
-    phone: { type: 'number' },
+    phone: { type: 'string' },
 
     openTime: { type: 'string' },
 
-    closeTime: { type: 'string' }
+    closeTime: { type: 'string' },
+
+    lastUpdateTime:{type:'string'},
+
+    menuImage:{type:'string'},
+
+    isActive:{type:'boolean'}
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

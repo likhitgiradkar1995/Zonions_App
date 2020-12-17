@@ -4,6 +4,7 @@ module.exports = {
     async create(req, res) {
         try {
             let param = req.allParams();
+            console.log(param);
             if (!param.name)
                 return res.badRequest({ err: "name is required field!" });
             else if (!param.address)
@@ -16,7 +17,9 @@ module.exports = {
                 address: param.address,
                 phone: param.phone,
                 openTime: param.openTime,
-                closeTime: param.closeTime
+                closeTime: param.closeTime,
+                menuImage: param.menuImage,
+                isActive: param.isActive
             });
             return res.ok(results);
         }
@@ -28,8 +31,6 @@ module.exports = {
     async find(req, res) {
         try {
             const restaurant = await Restaurant.find();
-            //const users = await User.find()
-            //console.log(users)
             return res.ok(restaurant);
         }
         catch (err) {
@@ -64,7 +65,15 @@ module.exports = {
                 attribute.openTime = param.openTime;
             if (param.closeTime)
                 attribute.closeTime = param.closeTime;
-                
+            if (param.lastUpdateTime)
+                attribute.lastUpdateTime = param.lastUpdateTime;
+            if (param.menuImage)
+                attribute.menuImage = param.menuImage;
+            if (param.isActive)
+                attribute.isActive = param.isActive;
+                else
+                attribute.isActive = param.isActive;
+
             const result = await Restaurant.update({
                 id: req.params.id
             }, attribute);
